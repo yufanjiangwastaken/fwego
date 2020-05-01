@@ -16,7 +16,11 @@ const fwTheme: Theme = {
     },
     outline: {
       ...buttonBase,
-      boxShadow: 'inset 0 0 0 1px #4b4b4b'
+      boxShadow: 'inset 0 0 0 1px #4b4b4b',
+      '&:hover': {
+        bg: 'rgba(255, 255, 255, 0.2)',
+        boxShadow: 'none'
+      }
     }
   }
 }

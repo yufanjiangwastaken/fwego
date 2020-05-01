@@ -57,7 +57,7 @@ function toCssProperty(
   theme?: Theme
 ): string {
   const config = styleConfig[propertyName]
-  const cssName = config.name || propertyName
+  const cssName = config?.name || propertyName
   const transformer = config?.transformer
   let cssValue = propertyValue
   if (typeof transformer === 'function') {
@@ -80,10 +80,32 @@ export function combineCssProperties(
   styleConfig: StyleConfig,
   theme?: Theme
 ): string {
-  const cssProperties = Object.keys(styleProps)
-    .map((key) => toCssProperty(key, styleProps[key], styleConfig, theme))
+  const psuedo: Array<[string, Props]> = []
+  const regular: Array<[string, string]> = []
+  for (const k in styleProps) {
+    if (k.startsWith('&:')) {
+      psuedo.push([k, styleProps[k]])
+    } else {
+      regular.push([k, styleProps[k]])
+    }
+  }
+
+  const cssProperties = regular
+    .map(([k, v]) => toCssProperty(k, v, styleConfig, theme))
     .join('')
+
+  const psuedoProperties = psuedo
+    .map(([psuedoClass, psuedoStyleProps]) => {
+      return `${psuedoClass} {
+          ${Object.entries(psuedoStyleProps)
+            .map(([k, v]) => toCssProperty(k, v, styleConfig, theme))
+            .join('')}
+      }`
+    })
+    .join('')
+
   return css`
     ${cssProperties}
+    ${psuedoProperties}
   `
 }
