@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "build": "rm -rf dist && rollup -c",
-    "build-storybook": "build-storybook -c .storrybook -o .out",
+    "build-storybook": "build-storybook -c .storybook -o .out",
     "deploy-storybook": "storybook-to-ghpages",
     "lint": "eslint --fix src/**/*.{ts,tsx}",
     "prettier": "prettier --write '**/*.{ts,tsx}'",
