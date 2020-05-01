@@ -13,7 +13,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "rm -rf dist && rollup -c",
     "lint": "eslint --fix src/**/*.{ts,tsx}",
     "prettier": "prettier --write '**/*.{ts,tsx}'",
     "storybook": "start-storybook -p 6006",

@@ -1,23 +1,21 @@
 import React, { forwardRef } from 'react'
-import { css, cx } from '../../emotion'
-import { useTheme } from '../../hooks'
+import { cx } from '../../emotion'
 import type { FontSize, FontWeight } from '../../theme/fonts'
 import { Box } from '../Box/Box'
 import type { BoxProps } from '../Box/Box'
+import useBaselineStyles from './useBaselineStyles'
 
 export interface TextProps extends BoxProps {
+  baseline?: boolean
   size?: FontSize
   weight?: FontWeight
 }
-
-const baseStyles = css`
-  line-height: 1.15;
-`
 
 export const Text: React.FC<TextProps> = forwardRef(
   (
     {
       as = 'span',
+      baseline = false,
       children,
       className,
       m = 'none',
@@ -27,23 +25,12 @@ export const Text: React.FC<TextProps> = forwardRef(
     }: TextProps,
     ref: React.Ref<any>
   ) => {
-    const theme = useTheme()
-    const [typeOffset, heightCorrection] = theme.fontOffsets[size]
-
-    const cls = css`
-      transform: translateY(${typeOffset});
-      &:before {
-        content: '';
-        display: block;
-        height: 0px;
-        margin-top: -${heightCorrection};
-      }
-    `
+    const baselineCls = useBaselineStyles(baseline, size)
 
     return (
       <Box
         as={as}
-        className={cx(baseStyles, cls, className)}
+        className={cx(baselineCls, className)}
         fontSize={size}
         fontWeight={weight}
         m={m}

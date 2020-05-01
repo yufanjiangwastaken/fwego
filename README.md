@@ -1,6 +1,6 @@
 # Fwego UI
 
-A set of React components built for a consistent design system
+A themeable set of React components built for a consistent design system
 
 ## Setup
 

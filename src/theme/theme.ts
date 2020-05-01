@@ -6,6 +6,9 @@ export type Theme = { [key: string]: any }
 
 const theme: Theme = {
   breakpoints: breakpoints,
+  colors: {
+    primary: '#ff7061'
+  },
   fontOffsets: fontOffsets,
   fontSizes: fontSizes,
   fontWeights: fontWeights,
