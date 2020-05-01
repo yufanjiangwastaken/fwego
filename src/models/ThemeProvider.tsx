@@ -14,7 +14,11 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   children,
   theme
 }: ThemeProviderProps) => {
-  const contextValue: Theme = useMemo(() => merge(defaultTheme, theme), [theme])
+  // lodash/merge mutates the first argument, so the object spread is meant to
+  // prevent that from happening to the defaultTheme
+  const contextValue: Theme = useMemo(() => merge({ ...defaultTheme }, theme), [
+    theme
+  ])
 
   return (
     <ThemeContext.Provider value={contextValue}>

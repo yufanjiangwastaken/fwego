@@ -14,10 +14,11 @@
   ],
   "scripts": {
     "build": "rm -rf dist && rollup -c",
+    "build-storybook": "build-storybook -c .storrybook -o .out",
+    "deploy-storybook": "storybook-to-ghpages",
     "lint": "eslint --fix src/**/*.{ts,tsx}",
     "prettier": "prettier --write '**/*.{ts,tsx}'",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
@@ -28,6 +29,8 @@
     "@storybook/addon-links": "^5.3.18",
     "@storybook/addons": "^5.3.18",
     "@storybook/react": "^5.3.18",
+    "@storybook/storybook-deployer": "^2.8.5",
+    "@storybook/theming": "^5.3.18",
     "@types/lodash": "^4.14.150",
     "@types/node": "^13.13.4",
     "@types/react": "^16.9.34",
