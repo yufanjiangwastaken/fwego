@@ -19,7 +19,6 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@rollup/plugin-commonjs": "^11.1.0",
@@ -36,6 +35,7 @@
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
     "babel-loader": "^8.1.0",
+    "create-emotion": "^10.0.27",
     "emotion": "^10.0.27",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
@@ -57,7 +57,9 @@
     "typescript": "^3.8.3"
   },
   "peerDependencies": {
+    "create-emotion": "^10.0.27",
     "emotion": "^10.0.27",
+    "lodash": "^4.17.15",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
