@@ -15,6 +15,7 @@ export interface BoxProps extends React.HTMLAttributes<any> {
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   bg?: string
   backgroundImage?: string
+  border?: string
   borderRadius?: string
   boxShadow?: string
   color?: string

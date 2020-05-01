@@ -15,6 +15,9 @@ const styleConfig: StyleConfig = {
     name: 'background',
     transformer: colorTransformer
   },
+  border: {
+    name: 'border'
+  },
   borderRadius: {
     name: 'border-radius',
     transformer: sizeTransformer

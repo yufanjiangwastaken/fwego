@@ -7,7 +7,12 @@ const buttonBase = {
 
 const fwTheme: Theme = {
   colors: {
-    primary: '#ff7061'
+    primary: '#ff7061',
+    blk1: '#121212',
+    gray1: '#171717',
+    gray2: '#2b2b2b',
+    gray3: '#404040',
+    offWhite: '#dbdbdb'
   },
   variants: {
     primary: {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex } from './Flex'
+import { Flex } from '../'
 
 export default {
   component: Flex,

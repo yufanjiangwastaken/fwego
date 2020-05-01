@@ -17,9 +17,6 @@ export const Stack: React.FC<StackProps> = forwardRef(
     const spacing = useSpace(space)
 
     const cls = css`
-      > * {
-        display: block;
-      }
       > *:not(:last-child) {
         margin-bottom: ${spacing};
       }

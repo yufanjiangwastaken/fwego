@@ -1,7 +1,6 @@
 import React from 'react'
 import { FWThemeProvider } from '../../models/FWThemeProvider'
-import { Inline } from '../Inline/Inline'
-import { Button } from './Button'
+import { Button, Inline } from '../'
 
 export default {
   component: Button,
