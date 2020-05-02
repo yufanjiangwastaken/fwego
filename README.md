@@ -16,11 +16,17 @@ Install dependencies `yarn`
 
 ## Development
 
-Run storybook
+1. Install dependencies
 
-```
-yarn storybook
-```
+    ```
+    npm install
+    ```
+
+2. Run storybook
+
+    ```
+    yarn storybook
+    ```
 
 ## GitHub Pages
 
