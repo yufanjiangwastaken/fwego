@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading } from './Heading'
+import { Box, Flex, Heading } from '../'
 
 export default {
   component: Heading,
@@ -16,5 +16,45 @@ export const Default: React.FC<{}> = () => {
       <Heading level="5">Heading 5</Heading>
       <Heading level="6">Heading 6</Heading>
     </>
+  )
+}
+
+export const Baseline: React.FC<{}> = () => {
+  return (
+    <Flex>
+      <Box>
+        <Heading baseline level="1">
+          Baseline Heading
+        </Heading>
+        <Heading baseline level="1">
+          Baseline Heading
+        </Heading>
+        <Heading baseline level="1">
+          Baseline Heading
+        </Heading>
+      </Box>
+      <Box>
+        <Heading baseline level="2">
+          Baseline Heading
+        </Heading>
+        <Heading baseline level="2">
+          Baseline Heading
+        </Heading>
+        <Heading baseline level="2">
+          Baseline Heading
+        </Heading>
+      </Box>
+      <Box>
+        <Heading baseline level="3">
+          Baseline Heading
+        </Heading>
+        <Heading baseline level="3">
+          Baseline Heading
+        </Heading>
+        <Heading baseline level="3">
+          Baseline Heading
+        </Heading>
+      </Box>
+    </Flex>
   )
 }

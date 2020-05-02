@@ -97,3 +97,31 @@ export const ResponsiveGrid: React.FC<{}> = () => {
     </>
   )
 }
+
+const SpacingBox: React.FC<any> = ({ space, px }: any) => {
+  return (
+    <Box
+      bg="primary"
+      color="white"
+      width="150"
+      height="150"
+      p={space}
+      mr={space}
+    >
+      <Text>p=&quot;{space}&quot;</Text>
+      <Text>mr=&quot;{space}&quot;</Text>
+      <Text>{px}</Text>
+    </Box>
+  )
+}
+
+export const Spacing: React.FC<any> = () => {
+  const theme = useTheme()
+  return (
+    <Flex>
+      {Object.entries(theme.spaces).map(([space, px]) => (
+        <SpacingBox key={space} space={space} px={px} />
+      ))}
+    </Flex>
+  )
+}
